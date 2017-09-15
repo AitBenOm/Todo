@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Todo Liste - Mon Gestionnaire de Tâches</h1>
+  <Form-app></Form-app>
+
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <table  class="table table-bordered table-hover">
+
+        <!--  1ère rangée -->
+        <tr   *ngFor="let todo of list let i = index" [ngClass]="setClasse(todo)" >
+
+          <td width="55%" (click)="Afficher(todo)">{{todo.texte | uppercase}} </td>
+          <td width="25%">{{todo.date | date: "dd - MM - yyyy" }} </td>
+          <td width="25%">{{todo.priority}}</td>
+          <td width="2%"><span (click)="Done(i)" class="label label-success">&#10004;</span></td>
+          <td width="2%"><span (click)="Supprimer(i)" class="label label-danger">X</span></td>
+        </tr>
+
+        <!--  2ème rangée -->
+
+
+      </table>
+    </div>
+
+  </div><!-- row -->
+<detail-app [todo]="todoSelected"></detail-app>
+</div>
+`
+
+
+</body>
+</html>

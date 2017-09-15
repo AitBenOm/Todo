@@ -1,0 +1,39 @@
+<div class="row" *ngIf="todo">
+
+  <div class="col-md-8">
+    <div class="well">
+      <div *ngIf="!edit">
+        <h2>{{todo.texte}} </h2>
+        <p><label>Priorité</label> {{todo.priority}} </p>
+        <p>{{todo.desc}}</p>
+
+      </div>
+      <div  *ngIf="edit">
+        <span class="help-block">Modifier Todo</span>
+        <input class="form-control input-sm" placeholder="Todo" [(ngModel)]="todo.texte"  type="text" name="todoSelected.texte">
+
+
+        <span class="help-block">Modifier Date</span>
+        <input class="form-control input-sm" placeholder="{{todo.date}}" [(ngModel)]="todo.date  "  type="date" name="todoSelected.date">
+
+        <span class="help-block">Modifier Priorité</span>
+        <select  class="form-control" id="sel1" [(ngModel)]="todo.priority" name="todoSelected.priority">
+          <option>haute</option>
+          <option>moyenne</option>
+          <option>faible</option>
+
+        </select>
+        <span class="help-block">Modifier Description</span>
+        <textarea class="form-control input-sm " rows="3" [(ngModel)]="todo.Desc" name="todoSelected.Desc" ></textarea>
+
+      </div>
+
+
+      <p><button type="submit" class="btn btn-default btn-sm" (click)="ModifierToDo(edit)">{{texteButton}}</button></p>
+    </div>
+
+
+
+  </div>
+
+</div>

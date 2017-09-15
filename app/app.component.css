@@ -1,0 +1,39 @@
+body {
+	padding-top : 100px;
+}
+h2 {color: #333}
+
+
+.well {
+  background: rgba(189, 195, 199,0.1)
+}
+
+.delete-icon {
+	cursor: cell;
+}
+
+.faible {
+	background: transparent;
+}
+
+.moyenne {
+	background: rgba(255, 255, 0, 0.1);
+}
+
+.haute {
+	background: rgba(255, 0, 0, 0.1);;
+}
+.fait{
+  background: darkgrey;
+  text-decoration: line-through;
+  color: white;
+  cursor: not-allowed;
+  pointer-events: none;
+
+}
+.alert{
+  color: red;
+  font-weight: bold;
+
+
+}

@@ -1,0 +1,45 @@
+
+<div class="row">
+
+  <div class="col-md-8">
+
+    <div class="row">
+      <div class="col-md-5">
+
+        <input class="form-control input-sm" placeholder="Todo"  [(ngModel)]="Ntodo" (keyup)="TestTodo(Ntodo)" type="text" name="Ntodo">
+        <span *ngIf="!TodoTest"  [ngClass]="setClasse()"> {{TodoErr}}</span>
+      </div>
+
+      <div class="col-md-3">
+        <input class="form-control input-sm" placeholder="Date" [(ngModel)]="Date"  type="date" name="Date">
+      </div>
+
+      <div class="col-md-4">
+
+        <select  class="form-control" id="sel1" [(ngModel)]="Prio" name="Prio">
+          <option>haute</option>
+          <option>moyenne</option>
+          <option>faible</option>
+
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <textarea class="form-control input-sm " rows="3" [(ngModel)]="Desc" name="Desc" ></textarea>
+      </div>
+
+    </div>
+
+
+
+
+<br>
+    <!--<input class="form-control input-sm" placeholder="Priorité" [(ngModel)]="Prio"  type="text" name="Prio">-->
+    <!--<button class="form-control input-sm"  (click)="Ajouter(Ntodo,Date,Prio)">Ajouter</button>-->
+    <button class="form-control input-sm col-md-3" [disabled]="!Ntodo || !Prio || !Desc || !Date"  (click)="Ajouter(Ntodo,Date,Prio,Desc)">Ajouter</button>
+
+  </div>
+
+</div>
